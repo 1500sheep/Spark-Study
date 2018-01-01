@@ -2,27 +2,37 @@
 
 
 
-#### 
+#### Spark Install (JAVA 사전에 설치)
 
-#### Hadoop Install(사전에 JAVA 설치)
+1. sudo apt-add install scala
+2. tar -xvzf spark-2.1.0-bin-hadoop2.7.tgz
+3. bin/spark-shell(스파크 실행)
 
-1. sudo apt-get install ssh
+#### Spark WordCount(Scala, Python)
 
-2. sudo apt-get install rsync
+1. Scala
 
-3. wget http://mirror.apache-kr.org/hadoop/common/hadoop-2.8.1/hadoop-2.8.1.tar.gz
+   1. Spark directory위치에서 bin/spark-shell.
 
-4. mv hadoop-2.8.1.tar.gz /usr/local/(sudo 필요)
+   2. WordCount 
 
-5. tar xvzf hadoop-2.8.1.tar.gz(/usr/local 에서)
+      > val textFile = sc.textFile("/home/jameskang/spark/word.txt")
+      >
+      > val counts = textFile.flatMap(line => line.split(" "))map(word =>(word,1))reduceByKey(_ + _)
+      >
+      > counts.collect()
 
-  ​
+2. Python
 
-#### Docker Install
+   1. Spark directory위치에서 bin/pyspark.
 
+   2. WordCount
 
+      > text_file = sc.textFile("/home/jameskang/spark/word.txt")
+      >
+      > counts  = text_file.flatMap(lambda line : line.split(" ")).map(lamda word:(word,1)).reduceByKey(lambda a,b : a +b)
+      >
+      > counts.collect()
 
-
-
-#### Spark Install
+   **localhost:4040으로 completed Jobs확인** 
 
