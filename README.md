@@ -17,3 +17,7 @@ Concept
 - **이미지**  : 컨테이너 실행에 필요한 파일과 설정값 등을 포함하고 있는 것!
 - 레이어 : 이미지는 여러개의 읽기전용(read only) 레이어로 구성되고 파일이 추가되거나 수정되면 새로운 레이어가 생성된다.
 
+
+I'm doing this on feauture/my-feature first
+
+I'm doing this on release/1.0.0 first
