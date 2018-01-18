@@ -19,3 +19,5 @@ Concept
 
 
 I'm doing this on feauture/my-feature first
+
+I'm doing this on release/1.0.0 first
